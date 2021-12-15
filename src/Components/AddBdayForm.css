@@ -26,3 +26,7 @@ button {
   padding: .7em .5em;
   font-size: 1.3em;
 }
+
+button:hover {
+  cursor: pointer;
+}

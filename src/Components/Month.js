@@ -1,9 +1,9 @@
 import './Month.css'
 
-const Month = ({ month, birthdays }) => {
+const Month = ({ month, birthdays, error }) => {
   const formattedBdays = birthdays && birthdays.length ? birthdays.map(bday => {
     return <p key={bday.id}>{bday.name}: {bday.month}/{bday.day}</p>
-  }) : <p className='no-birthdays'>No birthdays this month.</p>
+  }) : !error && <p className='no-birthdays'>No birthdays this month.</p>
 
   return (
   <section>

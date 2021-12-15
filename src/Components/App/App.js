@@ -8,7 +8,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      months: months
+      months: months,
+      error: null
     }
   }
 
@@ -18,16 +19,28 @@ class App extends Component {
       .then(data => this.setState({
         birthdays: data
       }))
+      .catch(error => this.setState({
+        error: error
+      }))
   }
 
   addBirthday = (newBirthday) => {
+    console.log(newBirthday)
     this.setState({
       birthdays: [...this.state.birthdays, newBirthday]
     })
+    fetch('http://localhost:3001/api/v1/birthdays', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newBirthday)
+    }).then(response => response.json())
+    .then(data => console.log(data))
   }
 
   render() {
-    const displayMonths = this.state.months && this.state.months.map(month => {
+    const displayMonths = this.state.error ? <Month month='Failed to fetch. Try again later!' error={this.state.error} /> : this.state.months && this.state.months.map(month => {
       const bdaysInMonth = this.state.birthdays && this.state.birthdays.filter(bday => {
         return bday.month === month.id
       })

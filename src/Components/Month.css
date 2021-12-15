@@ -13,12 +13,12 @@ h2 {
 
 p {
   font-size: 1.1em;
+  margin: .2em 0;
 }
 
 .birthdays {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
 }
 
 .no-birthdays {
