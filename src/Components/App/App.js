@@ -36,7 +36,14 @@ class App extends Component {
       },
       body: JSON.stringify(newBirthday)
     }).then(response => response.json())
-    .then(data => console.log(data))
+    .then(() => this.handlePost('🥳'))
+    .catch(error => this.handlePost(error))
+  }
+
+  handlePost = (data) => {
+    const title = document.querySelector('h1')
+    title.innerText = data
+    setTimeout(() => title.innerText = 'Birthdays', 1500)
   }
 
   render() {
