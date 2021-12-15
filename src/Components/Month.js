@@ -2,7 +2,8 @@ import './Month.css'
 
 const Month = ({ month, birthdays }) => {
   const formattedBdays = birthdays && birthdays.map(bday => {
-    return <p>{bday.name}: {bday.month}/{bday.day}</p>
+    // console.log(bday.id + "bday")
+    return <p key={bday.id}>{bday.name}: {bday.month}/{bday.day}</p>
   })
 
   return (

@@ -9,8 +9,10 @@ section {
 h2 {
   color: #D077E7;
   text-align: center;
+  margin-bottom: 1.7em;
 }
 
 p {
-  font-size: 1.05em;
+  font-size: 1.1em;
+  margin: 1.7em 0;
 }
