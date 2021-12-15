@@ -29,12 +29,10 @@ class App extends Component {
 
   render() {
     const displayMonths = this.state.months && this.state.months.map(month => {
-      // console.log(month + "hi")
       const bdaysInMonth = this.state.birthdays && this.state.birthdays.filter(bday => {
         console.log(bday.id, bday.month)
         return bday.month === month.id
       })
-      // console.log(bdaysInMonth)
       return <Month key={month.id} month={month.name} birthdays={bdaysInMonth}/>
     })
     return (
