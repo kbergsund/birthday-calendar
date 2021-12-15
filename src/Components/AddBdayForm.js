@@ -1,4 +1,4 @@
-import React, { Component} from 'react'
+import React, { Component } from 'react'
 import './AddBdayForm.css'
 
 export default class AddBdayForm extends Component {
@@ -39,20 +39,26 @@ export default class AddBdayForm extends Component {
   }
 
   render() {
-    return(
+    return (
       <form>
-        <label htmlFor='name'>Name:</label>
-        <input type='text' id='name' name='name' 
-          value={this.state.name}
-          onChange={event => this.handleChange(event)}/>
-        <label htmlFor='month'>Month:</label>
-        <input type='number' id='month' name='month' 
-          value={this.state.month} 
-          onChange={event => this.handleChange(event)}/>
-        <label htmlFor='day'>Day:</label>
-        <input type='number' id='day' name='day' 
-          value={this.state.day} 
-          onChange={event => this.handleChange(event)}/>
+        <div className='label-input-container'>
+          <label htmlFor='name'>Name:</label>
+          <input type='text' id='name' name='name'
+            value={this.state.name}
+            onChange={event => this.handleChange(event)} />
+        </div>
+        <div className='label-input-container'>
+          <label htmlFor='month'>Month:</label>
+          <input type='number' id='month' name='month'
+            value={this.state.month}
+            onChange={event => this.handleChange(event)} />
+        </div>
+        <div className='label-input-container'>
+          <label htmlFor='day'>Day:</label>
+          <input type='number' id='day' name='day'
+            value={this.state.day}
+            onChange={event => this.handleChange(event)} />
+        </div>
         <button onClick={event => this.submitBirthday(event)}>Add this birthday!</button>
       </form>
     )

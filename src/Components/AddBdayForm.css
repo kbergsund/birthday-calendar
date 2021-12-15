@@ -1,3 +1,28 @@
 form {
   border: 7px solid black;
+  padding: 1em;
+  margin: 1em 0;
+  background: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+label {
+  display: block;
+  text-align: left;
+}
+
+input {
+  width: 20em;
+}
+
+button {
+  background: #5DE1E6;
+  border: 0;
+  border-radius: 20px;
+  color: white;
+  padding: .7em .5em;
+  font-size: 1.3em;
 }
