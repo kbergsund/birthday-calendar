@@ -21,7 +21,6 @@ class App extends Component {
   }
 
   addBirthday = (newBirthday) => {
-    console.log(newBirthday)
     this.setState({
       birthdays: [...this.state.birthdays, newBirthday]
     })
@@ -30,7 +29,6 @@ class App extends Component {
   render() {
     const displayMonths = this.state.months && this.state.months.map(month => {
       const bdaysInMonth = this.state.birthdays && this.state.birthdays.filter(bday => {
-        console.log(bday.id, bday.month)
         return bday.month === month.id
       })
       return <Month key={month.id} month={month.name} birthdays={bdaysInMonth}/>
